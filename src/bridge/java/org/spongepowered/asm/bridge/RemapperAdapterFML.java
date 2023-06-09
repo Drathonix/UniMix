@@ -125,7 +125,7 @@ public final class RemapperAdapterFML implements IRemapper, IClassRemapper {
             try {
                 Class<?> clDeobfRemapper = RemapperAdapterFML.getFMLDeobfuscatingRemapperClass();
                 Field singletonField = clDeobfRemapper.getDeclaredField(RemapperAdapterFML.INSTANCE_FIELD);
-                org.objectweb.asm.commons.Remapper remapper = (org.objectweb.asm.commons.Remapper) singletonField.get(null);
+                this.fmlDeobfuscatingRemapper = (org.objectweb.asm.commons.Remapper) singletonField.get(null);
                 this.mdUnmap = clDeobfRemapper.getDeclaredMethod(RemapperAdapterFML.UNMAP_METHOD, String.class);
             } catch (Exception ex) {
                 ex.printStackTrace();
