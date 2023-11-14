@@ -1,3 +1,15 @@
+### What is this Fork?
+
+This UniMix fork is designed to allow old mod compatibility with MixinBooter.
+
+The following changes are made:
+
+Renamed "MixinBootstrap" and "Mixins" to "True[oldname]".
+Created new MixinBootstrap and Mixin classes that implement the bare minimum methods used commonly by old Mixin mods.
+Publicized MixinProcessor and created method prepareConfigs(Environment) 
+
+These changes allows the pack Devil's Modded PvP to run using MixinBooter WITHOUT MixinBootstrap and MixinCompat.
+
 
 ### [![Build Status](http://ci.liteloader.com/view/Other/job/Mixin/badge/icon)](http://ci.liteloader.com/view/Other/job/Mixin/lastSuccessfulBuild/)
 
