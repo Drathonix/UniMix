@@ -27,7 +27,7 @@ package org.spongepowered.asm.mixin;
 import java.io.File;
 import java.util.List;
 
-import org.spongepowered.asm.launch.MixinBootstrap;
+import org.spongepowered.asm.launch.TrueMixinBootstrap;
 import org.spongepowered.asm.mixin.MixinEnvironment.Phase;
 
 import net.minecraft.launchwrapper.ITweaker;
@@ -45,7 +45,7 @@ public class EnvironmentStateTweaker implements ITweaker {
 
     @Override
     public void injectIntoClassLoader(LaunchClassLoader classLoader) {
-        MixinBootstrap.getPlatform().inject();
+        TrueMixinBootstrap.getPlatform().inject();
     }
 
     @Override

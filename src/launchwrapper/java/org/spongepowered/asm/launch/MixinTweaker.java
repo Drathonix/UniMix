@@ -43,7 +43,7 @@ public class MixinTweaker implements ITweaker {
      * Hello world
      */
     public MixinTweaker() {
-        MixinBootstrap.start();
+        TrueMixinBootstrap.start();
     }
     
     /* (non-Javadoc)
@@ -52,7 +52,7 @@ public class MixinTweaker implements ITweaker {
      */
     @Override
     public final void acceptOptions(List<String> args, File gameDir, File assetsDir, String profile) {
-        MixinBootstrap.doInit(CommandLineOptions.ofArgs(args));
+        TrueMixinBootstrap.doInit(CommandLineOptions.ofArgs(args));
     }
 
     /* (non-Javadoc)
@@ -61,7 +61,7 @@ public class MixinTweaker implements ITweaker {
      */
     @Override
     public final void injectIntoClassLoader(LaunchClassLoader classLoader) {
-        MixinBootstrap.inject();
+        TrueMixinBootstrap.inject();
     }
 
     /* (non-Javadoc)
@@ -69,7 +69,7 @@ public class MixinTweaker implements ITweaker {
      */
     @Override
     public String getLaunchTarget() {
-        return MixinBootstrap.getPlatform().getLaunchTarget();
+        return TrueMixinBootstrap.getPlatform().getLaunchTarget();
     }
 
     /* (non-Javadoc)

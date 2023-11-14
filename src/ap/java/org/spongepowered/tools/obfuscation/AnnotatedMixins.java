@@ -55,7 +55,7 @@ import javax.tools.FileObject;
 import javax.tools.StandardLocation;
 
 import org.objectweb.asm.Type;
-import org.spongepowered.asm.launch.MixinBootstrap;
+import org.spongepowered.asm.launch.TrueMixinBootstrap;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.gen.Accessor;
 import org.spongepowered.asm.mixin.gen.Invoker;
@@ -154,7 +154,7 @@ final class AnnotatedMixins implements IMixinAnnotationProcessor, ITokenProvider
 
         String pluginVersion = this.checkPluginVersion(this.getOption(SupportedOptions.PLUGIN_VERSION));
         String pluginVersionString = pluginVersion != null ? String.format(" (MixinGradle Version=%s)", pluginVersion) : "";
-        this.printMessage(MessageType.INFO, "SpongePowered MIXIN Annotation Processor Version=" + MixinBootstrap.VERSION + pluginVersionString);
+        this.printMessage(MessageType.INFO, "SpongePowered MIXIN Annotation Processor Version=" + TrueMixinBootstrap.VERSION + pluginVersionString);
 
         this.targets = this.initTargetMap();
         this.obf = new ObfuscationManager(this);

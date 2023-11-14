@@ -22,20 +22,8 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.asm.mixin.connect;
+package org.spongepowered.asm.mixin;
 
-import org.spongepowered.asm.mixin.TrueMixins;
-
-/**
- * A connector class is a bootstrap agent for a mixin consumer. It should call
- * back against {@link TrueMixins} to register its resources much like previous
- * "CoreMod" bootstraps.
- */
-public interface IMixinConnector {
-
-    /**
-     * Connect to Mixin
-     */
-    public abstract void connect();
-    
+public interface IMixinBridge {
+    void addConfiguration(String file);
 }

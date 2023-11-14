@@ -37,7 +37,7 @@ import org.spongepowered.asm.logging.Level;
 import org.spongepowered.asm.logging.ILogger;
 import org.spongepowered.asm.launch.GlobalProperties;
 import org.spongepowered.asm.launch.GlobalProperties.Keys;
-import org.spongepowered.asm.launch.MixinBootstrap;
+import org.spongepowered.asm.launch.TrueMixinBootstrap;
 import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.extensibility.IEnvironmentTokenProvider;
 import org.spongepowered.asm.mixin.injection.At;
@@ -1097,7 +1097,7 @@ public final class MixinEnvironment implements ITokenProvider {
         
         // Sanity check
         Object version = this.getVersion();
-        if (version == null || !MixinBootstrap.VERSION.equals(version)) {
+        if (version == null || !TrueMixinBootstrap.VERSION.equals(version)) {
             throw new MixinException("Environment conflict, mismatched versions or you didn't call MixinBootstrap.init()");
         }
         
@@ -1197,7 +1197,7 @@ public final class MixinEnvironment implements ITokenProvider {
     @Deprecated
     public MixinEnvironment addConfiguration(String config) {
         MixinEnvironment.logger.warn("MixinEnvironment::addConfiguration is deprecated and will be removed. Use Mixins::addConfiguration instead!");
-        Mixins.addConfiguration(config, this);
+        TrueMixins.addConfigurationA(config, this);
         return this;
     }
 
@@ -1277,7 +1277,7 @@ public final class MixinEnvironment implements ITokenProvider {
      */
     @Deprecated
     public Set<String> getErrorHandlerClasses() {
-        return Mixins.getErrorHandlerClasses();
+        return TrueMixins.getErrorHandlerClasses();
     }
 
     /**

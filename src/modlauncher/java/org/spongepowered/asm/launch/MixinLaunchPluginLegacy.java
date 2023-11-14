@@ -197,8 +197,8 @@ public class MixinLaunchPluginLegacy implements ILaunchPluginService, IClassByte
 
     protected void initializeLaunch(ITransformerLoader transformerLoader) {
         this.transformerLoader = transformerLoader;
-        MixinBootstrap.doInit(CommandLineOptions.of(this.commandLineMixins));
-        MixinBootstrap.inject();
+        TrueMixinBootstrap.doInit(CommandLineOptions.of(this.commandLineMixins));
+        TrueMixinBootstrap.inject();
         this.service.onStartup();
     }
 

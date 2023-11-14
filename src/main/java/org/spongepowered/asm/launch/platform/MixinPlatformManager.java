@@ -41,7 +41,7 @@ import org.spongepowered.asm.mixin.MixinEnvironment.CompatibilityLevel;
 import org.spongepowered.asm.mixin.MixinEnvironment.Phase;
 import org.spongepowered.asm.service.MixinService;
 import org.spongepowered.asm.service.ServiceVersionError;
-import org.spongepowered.asm.mixin.Mixins;
+import org.spongepowered.asm.mixin.TrueMixins;
 import org.spongepowered.asm.mixin.throwables.MixinError;
 
 //import com.google.common.collect.ImmutableList;
@@ -266,7 +266,7 @@ public class MixinPlatformManager {
     final void addConfig(String config) {
         if (config.endsWith(".json")) {
             MixinPlatformManager.logger.debug("Registering mixin config: {}", config);
-            Mixins.addConfiguration(config);
+            TrueMixins.addConfigurationA(config);
         } else if (config.contains(".json@")) {
             throw new MixinError("Setting config phase via manifest is no longer supported: " + config + ". Specify target in config instead");
         }

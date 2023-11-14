@@ -85,7 +85,7 @@ public abstract class MixinTransformationServiceAbstract implements ITransformat
         }
         this.plugin = (MixinLaunchPluginLegacy)launchPlugin;
         
-        MixinBootstrap.start();
+        TrueMixinBootstrap.start();
         this.plugin.init(environment, this.commandLineMixins);
     }
     
