@@ -10,6 +10,8 @@ Publicized MixinProcessor and created method prepareConfigs(Environment)
 
 These changes allows the pack Devil's Modded PvP to run using MixinBooter WITHOUT MixinBootstrap and MixinCompat.
 
+# Mixins
+
 **Mixin** is a trait/mixin framework for Java using [ASM](https://asm.ow2.io/)
 and hooking into the runtime classloading process via a set of pluggable
 built-in or user-provided services. Built-in services currently support Mojang's
