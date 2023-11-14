@@ -1,4 +1,4 @@
-### What is this Fork?
+# What is this Fork?
 
 This UniMix fork is designed to allow old mod compatibility with MixinBooter.
 
@@ -9,11 +9,6 @@ Created new MixinBootstrap and Mixin classes that implement the bare minimum met
 Publicized MixinProcessor and created method prepareConfigs(Environment) 
 
 These changes allows the pack Devil's Modded PvP to run using MixinBooter WITHOUT MixinBootstrap and MixinCompat.
-
-
-### [![Build Status](http://ci.liteloader.com/view/Other/job/Mixin/badge/icon)](http://ci.liteloader.com/view/Other/job/Mixin/lastSuccessfulBuild/)
-
-![Mixin Logo](docs/javadoc/resources/logo.png?raw=true)
 
 **Mixin** is a trait/mixin framework for Java using [ASM](https://asm.ow2.io/)
 and hooking into the runtime classloading process via a set of pluggable
